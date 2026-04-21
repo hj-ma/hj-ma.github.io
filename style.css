@@ -9,7 +9,7 @@
   --line: #d8e2d8;
   --shadow: 0 10px 30px rgba(31, 71, 47, 0.06);
   --radius: 18px;
-  --hero-top-height: clamp(240px, 27vw, 312px);
+  --hero-top-height: clamp(190px, 22vw, 248px);
 }
 
 * {
@@ -103,8 +103,9 @@ a {
 
 .hero-copy-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.02fr) clamp(160px, 21vw, 230px);
+  column-gap: 14px;
+  row-gap: 18px;
   align-items: end;
 }
 
@@ -158,11 +159,22 @@ h1 {
 }
 
 .hero-title {
-  max-width: 12ch;
+  max-width: none;
+  width: 100%;
   height: var(--hero-top-height);
   display: flex;
-  align-items: flex-end;
-  font-size: clamp(1.65rem, 2.9vw, 2.6rem);
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.1em;
+  font-size: clamp(1.62rem, 2.25vw, 2.3rem);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.hero-title-line {
+  display: block;
+  white-space: nowrap;
 }
 
 h2 {
@@ -306,6 +318,10 @@ strong {
 
 .interest-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.interests-grid-extended {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .project-grid {
