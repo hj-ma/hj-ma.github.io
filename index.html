@@ -297,5 +297,24 @@
         </section>
       </main>
     </div>
+
+    <!-- Motion animations -->
+    <script type="module">
+      import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
+
+      // 1. Hero Load Animation
+      animate(".hero-title-line", { opacity: [0, 1], y: [20, 0] }, { delay: stagger(0.15), duration: 0.8, ease: "easeOut" });
+      animate(".hero-photo", { opacity: [0, 1], scale: [0.95, 1] }, { duration: 1.2, ease: "easeOut" });
+      animate(
+        ".hero-text, .hero-actions, .hero-panel", 
+        { opacity: [0, 1], y: [20, 0] }, 
+        { delay: stagger(0.15, { startDelay: 0.4 }), duration: 0.8, ease: "easeOut" }
+      );
+
+      // 2. Scroll Animation for Sections
+      inView(".section", ({ target }) => {
+        animate(target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, ease: "easeOut" });
+      }, { margin: "-100px" });
+    </script>
   </body>
 </html>
