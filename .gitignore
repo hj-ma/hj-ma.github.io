@@ -1,0 +1,31 @@
+# macOS / system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editor and local workspace files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and local environment
+*.log
+.env
+.env.*
+!.env.example
+
+# Dependency/build folders if tooling is added later
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+
+# Keep optimized web assets, but avoid committing raw/original exports.
+assets/images/**/raw/
+assets/images/**/originals/
+assets/images/interests/ai-short-film/card.png
