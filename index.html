@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=20260520-hero-layout" />
   </head>
   <body>
     <div class="page-shell">
@@ -22,8 +22,7 @@
         <a class="brand" href="#top">Haojun Ma</a>
         <nav class="site-nav" aria-label="Primary">
           <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
+          <a href="#projects">Research</a>
           <a href="#interests">Interests</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -33,36 +32,27 @@
         <section class="hero">
           <div class="hero-copy">
             <div class="hero-copy-layout">
-              <h1 class="hero-title">
-                <span class="hero-title-line">Software engineering</span>
-                <span class="hero-title-line">student exploring</span>
-                <span class="hero-title-line">HCI, AI, and systems.</span>
-              </h1>
               <div class="hero-photo-slot">
-                <img class="hero-photo" src="selfpic.jpg" alt="Portrait of Haojun Ma" />
+                <img class="hero-photo" src="assets/images/profile/selfpic.jpg" alt="Portrait of Haojun Ma" />
               </div>
               <p class="hero-text hero-text-wide">
-                I am a junior at <span class="editable">Zhejiang University</span>, currently a
-                visiting student at <span class="editable">UC Berkeley</span>, studying
-                <span class="editable">Software Engineering</span>. My work sits at the
-                intersection of <span class="editable">human-computer interaction</span>,
+                I am a junior at <span class="editable">Zhejiang University</span>, studying
+                <span class="editable">Software Engineering</span>. In Fall 2025, I was a
+                visiting student at <span class="editable">UC Berkeley</span>. My work sits at
+                the intersection of <span class="editable">human-computer interaction</span>,
                 <span class="editable">machine learning</span>, and
                 <span class="editable">systems programming</span>, with a focus on turning
                 research ideas into working software.
               </p>
-              <div class="hero-actions hero-actions-wide">
-                <a class="button button-primary" href="mailto:haojun.yeah@gmail.com">Email Me</a>
-                <a class="button button-secondary" href="Haojun_Ma_CV_new.pdf">Resume</a>
-              </div>
             </div>
           </div>
           <aside class="hero-panel">
             <p class="panel-label">Quick facts</p>
             <ul class="facts-list">
               <li><span>School</span><strong>Zhejiang University</strong></li>
-              <li><span>Visiting</span><strong>UC Berkeley</strong></li>
               <li><span>Major</span><strong>Software Engineering</strong></li>
               <li><span>Focus</span><strong>HCI, ML, Systems</strong></li>
+              <li><span>Email</span><strong><a href="mailto:haojun.yeah@gmail.com">haojun.yeah@gmail.com</a></strong></li>
             </ul>
           </aside>
         </section>
@@ -89,45 +79,13 @@
           </div>
         </section>
 
-        <section class="section" id="research">
-          <div class="section-heading">
-            <p class="eyebrow">Research Interests</p>
-            <h2>Areas I want to explore further</h2>
-          </div>
-          <div class="interest-grid">
-            <article class="interest-card">
-              <h3>Human-Computer Interaction</h3>
-              <p>
-                I am interested in interactive systems that make communication and analysis
-                more accessible, especially tools that convert complex inputs into usable,
-                real-time interfaces.
-              </p>
-            </article>
-            <article class="interest-card">
-              <h3>Machine Learning & NLP</h3>
-              <p>
-                I like building end-to-end ML pipelines, from preprocessing and model
-                selection to evaluation and interpretation, with particular interest in
-                language understanding tasks.
-              </p>
-            </article>
-            <article class="interest-card">
-              <h3>Systems Programming</h3>
-              <p>
-                I am drawn to the internals of operating systems and databases, including
-                concurrency, performance, and data structure design for reliable software.
-              </p>
-            </article>
-          </div>
-        </section>
-
         <section class="section" id="projects">
           <div class="section-heading">
             <p class="eyebrow">Selected Work</p>
             <h2>Projects that show how I work</h2>
           </div>
           <div class="project-grid">
-            <article class="project-card project-card-featured">
+            <a class="project-card project-card-featured" href="project-sign-language.html" aria-label="View Real-Time Sign Language Translation iOS App project page">
               <div class="media-placeholder media-placeholder-large">
                 <span>Demo video or interface screenshot</span>
               </div>
@@ -144,12 +102,9 @@
                 <li>Tools: Swift, Xcode, iOS UI development</li>
                 <li>Outcome: Working app prototype for real-time translation</li>
               </ul>
-              <div class="card-links">
-                <a class="text-link" href="project-sign-language.html">View project page</a>
-              </div>
-            </article>
+            </a>
 
-            <article class="project-card">
+            <a class="project-card" href="project-chi-dashboard.html" aria-label="View CHI Social Media Research Dashboard project page">
               <div class="media-placeholder">
                 <span>Dashboard screenshot</span>
               </div>
@@ -164,12 +119,9 @@
                 <li>Role: Frontend and visualization developer</li>
                 <li>Tools: Vue 3, TypeScript, Vite</li>
               </ul>
-              <div class="card-links">
-                <a class="text-link" href="project-chi-dashboard.html">View project page</a>
-              </div>
-            </article>
+            </a>
 
-            <article class="project-card">
+            <a class="project-card" href="project-nlp-models.html" aria-label="View Comparative Analysis of NLP Models project page">
               <div class="media-placeholder">
                 <span>Model comparison charts</span>
               </div>
@@ -184,10 +136,80 @@
                 <li>Role: Independent research project contributor</li>
                 <li>Tools: Python, Pandas, Gensim, visualization</li>
               </ul>
-              <div class="card-links">
-                <a class="text-link" href="project-nlp-models.html">View project page</a>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="interests">
+          <div class="section-heading">
+            <p class="eyebrow">Personal Interests</p>
+            <h2>Activities that shape how I think</h2>
+          </div>
+          <div class="interest-grid interests-grid-extended">
+            <a class="interest-card interest-card-featured-link" href="interest-movie-recommendation.html" aria-label="Read more about Movie Recommendation Project">
+              <div class="media-placeholder interest-card-media">
+                <img
+                  class="media-image"
+                  src="assets/images/interests/movie-recommendation/card.png"
+                  alt="Movie recommendation project workflow"
+                />
               </div>
-            </article>
+              <div class="interest-card-copy">
+                <h3>Movie Recommendation Project</h3>
+                <div class="interest-card-hover">
+                  <p>
+                    A personal film project that connects Letterboxd taste and viewing history with an AI-assisted recommendation workflow.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a class="interest-card interest-card-featured-link" href="interest-video-editing.html" aria-label="Read more about Video Editing">
+              <div class="media-placeholder interest-card-media">
+                <img
+                  class="media-image"
+                  src="assets/images/interests/video-editing/card.png"
+                  alt="DaVinci Resolve editing workflow"
+                />
+              </div>
+              <div class="interest-card-copy">
+                <h3>Video Editing</h3>
+                <div class="interest-card-hover">
+                  <p>
+                    I use video editing to practice pacing, framing, and visual storytelling through small personal pieces.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a class="interest-card interest-card-featured-link" href="interest-ai-short-film.html" aria-label="Read more about AI Short Film: A Dream of Confucius">
+              <div class="media-placeholder interest-card-media">
+                <img
+                  class="media-image media-image-focus-top"
+                  src="assets/images/interests/ai-short-film/card.jpg"
+                  alt="Poster for A Dream of Confucius"
+                />
+              </div>
+              <div class="interest-card-copy">
+                <h3>AI Short Film: A Dream of Confucius</h3>
+                <div class="interest-card-hover">
+                  <p>
+                    A collaborative AI short film project exploring ritual, memory, and visual storytelling through generative tools.
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a class="interest-card interest-card-featured-link" href="interest-guzheng-football.html" aria-label="Read more about Guzheng and Football">
+              <div class="media-placeholder interest-card-media">
+                <span>Performance clips, match photos, or training moments</span>
+              </div>
+              <div class="interest-card-copy">
+                <h3>Guzheng & Football</h3>
+                <div class="interest-card-hover">
+                  <p>
+                    Two long-term practices that shaped my patience, rhythm, teamwork, and decision-making under pressure.
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </section>
 
@@ -214,73 +236,6 @@
           </div>
         </section>
 
-        <section class="section" id="interests">
-          <div class="section-heading">
-            <p class="eyebrow">Personal Interests</p>
-            <h2>Activities that shape how I think</h2>
-          </div>
-          <div class="interest-grid interests-grid-extended">
-            <article class="interest-card interest-card-featured-link">
-              <div class="media-placeholder interest-card-media">
-                <span>Letterboxd lists, recommendation flow, or demo screenshots</span>
-              </div>
-              <div class="interest-card-copy">
-                <h3>Movie Recommendation Project</h3>
-                <div class="interest-card-hover">
-                  <p>
-                    A personal film project that connects Letterboxd taste and viewing history with an AI-assisted recommendation workflow.
-                  </p>
-                  <div class="interest-card-action">
-                    <a class="text-link interest-card-readmore" href="interest-movie-recommendation.html">Read More -&gt;</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="interest-card interest-card-featured-link">
-              <div class="media-placeholder interest-card-media">
-                <span>Editing reel or film stills</span>
-              </div>
-              <div class="interest-card-copy">
-                <h3>Video Editing</h3>
-                <div class="interest-card-hover">
-                  <p>
-                    I use video editing to practice pacing, framing, and visual storytelling through small personal pieces.
-                  </p>
-                  <div class="interest-card-action">
-                    <a class="text-link interest-card-readmore" href="interest-video-editing.html">Read More -&gt;</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <article class="interest-card">
-              <div class="media-placeholder interest-card-media">
-                <span>Performance photo or short clip</span>
-              </div>
-              <div class="interest-card-copy">
-                <h3>Guzheng</h3>
-                <div class="interest-card-hover">
-                  <p>
-                    More than twelve years of practice taught me patience, control, and respect for slow improvement.
-                  </p>
-                </div>
-              </div>
-            </article>
-            <article class="interest-card">
-              <div class="media-placeholder interest-card-media">
-                <span>Match photos, team training, or game highlights</span>
-              </div>
-              <div class="interest-card-copy">
-                <h3>Football</h3>
-                <div class="interest-card-hover">
-                  <p>
-                    Playing winger and forward on my college women's team sharpened my speed, teamwork, and decision-making under pressure.
-                  </p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <section class="section contact-section" id="contact">
           <p class="eyebrow">Contact</p>
           <h2>Let’s connect</h2>
@@ -303,10 +258,9 @@
       import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 
       // 1. Hero Load Animation
-      animate(".hero-title-line", { opacity: [0, 1], y: [20, 0] }, { delay: stagger(0.15), duration: 0.8, ease: "easeOut" });
       animate(".hero-photo", { opacity: [0, 1], scale: [0.95, 1] }, { duration: 1.2, ease: "easeOut" });
       animate(
-        ".hero-text, .hero-actions, .hero-panel", 
+        ".hero-text, .hero-panel", 
         { opacity: [0, 1], y: [20, 0] }, 
         { delay: stagger(0.15, { startDelay: 0.4 }), duration: 0.8, ease: "easeOut" }
       );
