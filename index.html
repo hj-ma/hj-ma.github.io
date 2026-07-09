@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haojun Ma | Summer Research Applications</title>
+    <title>Haojun Ma | Software Engineering Portfolio</title>
     <meta
       name="description"
-      content="Personal website for Haojun Ma, featuring research interests, selected projects, coursework, and contact information."
+      content="Portfolio for Haojun Ma, a software engineering student focused on HCI, machine learning, systems, and research-driven product prototypes."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260520-hero-layout" />
+    <link rel="stylesheet" href="style.css?v=20260708-lxq-rhythm" />
   </head>
   <body>
+    <div class="page-frame" aria-hidden="true"></div>
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#top">Haojun Ma</a>
@@ -26,6 +27,10 @@
           <a href="#interests">Interests</a>
           <a href="#contact">Contact</a>
         </nav>
+        <div class="site-status" aria-label="Portfolio status">
+          <span>OPEN</span>
+          <i aria-hidden="true"></i>
+        </div>
       </header>
 
       <main id="top">
@@ -33,7 +38,11 @@
           <div class="hero-copy">
             <div class="hero-copy-layout">
               <div class="hero-photo-slot">
-                <img class="hero-photo" src="assets/images/profile/selfpic.jpg" alt="Portrait of Haojun Ma" />
+                <img class="hero-photo" src="assets/images/profile/selfpic.jpg" alt="Portrait of Haojun Ma" width="1392" height="1778" />
+              </div>
+              <div class="hero-intro">
+                <p class="hero-kicker">Software Engineering · HCI · AI Systems</p>
+                <h1 class="hero-name">Haojun Ma</h1>
               </div>
               <p class="hero-text hero-text-wide">
                 I am a junior at <span class="editable">Zhejiang University</span>, studying
@@ -44,6 +53,12 @@
                 <span class="editable">systems programming</span>, with a focus on turning
                 research ideas into working software.
               </p>
+              <ul class="hero-tags" aria-label="Technical focus areas">
+                <li>HCI Prototypes</li>
+                <li>ML Evaluation</li>
+                <li>Data Visualization</li>
+                <li>iOS Development</li>
+              </ul>
             </div>
           </div>
           <aside class="hero-panel">
@@ -77,6 +92,23 @@
               and modern web development with Vue 3 and TypeScript.
             </p>
           </div>
+          <div class="focus-strip" aria-label="Research and engineering interests">
+            <div>
+              <span>01</span>
+              <strong>Human-Computer Interaction</strong>
+              <p>Interfaces that make communication, analysis, and accessibility workflows easier to use.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <strong>Machine Learning & NLP</strong>
+              <p>End-to-end evaluation pipelines, model comparison, and language understanding tasks.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <strong>Systems Thinking</strong>
+              <p>Reliable software structure across mobile apps, data workflows, and interactive tools.</p>
+            </div>
+          </div>
         </section>
 
         <section class="section" id="projects">
@@ -86,8 +118,17 @@
           </div>
           <div class="project-grid">
             <a class="project-card project-card-featured" href="project-sign-language.html" aria-label="View Real-Time Sign Language Translation iOS App project page">
-              <div class="media-placeholder media-placeholder-large">
-                <span>Demo video or interface screenshot</span>
+              <div class="media-placeholder media-placeholder-large project-visual project-visual-mobile" aria-hidden="true">
+                <div class="phone-frame">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="signal-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
               <p class="project-tag">Featured Project</p>
               <h3>Real-Time Sign Language Translation iOS App</h3>
@@ -102,11 +143,23 @@
                 <li>Tools: Swift, Xcode, iOS UI development</li>
                 <li>Outcome: Working app prototype for real-time translation</li>
               </ul>
+              <div class="project-meta-row" aria-label="Project highlights">
+                <span>Accessibility</span>
+                <span>iOS</span>
+                <span>Team Lead</span>
+              </div>
             </a>
 
             <a class="project-card" href="project-chi-dashboard.html" aria-label="View CHI Social Media Research Dashboard project page">
               <div class="media-placeholder">
-                <span>Dashboard screenshot</span>
+                <img
+                  class="media-image"
+                  src="assets/images/projects/chi-dashboard/card.png"
+                  alt="CHI social media research dashboard screenshot"
+                  width="1922"
+                  height="1084"
+                  loading="lazy"
+                />
               </div>
               <p class="project-tag">Project</p>
               <h3>CHI Social Media Research Dashboard</h3>
@@ -119,11 +172,25 @@
                 <li>Role: Frontend and visualization developer</li>
                 <li>Tools: Vue 3, TypeScript, Vite</li>
               </ul>
+              <div class="project-meta-row" aria-label="Project highlights">
+                <span>Visualization</span>
+                <span>Vue 3</span>
+                <span>HCI</span>
+              </div>
             </a>
 
             <a class="project-card" href="project-nlp-models.html" aria-label="View Comparative Analysis of NLP Models project page">
-              <div class="media-placeholder">
-                <span>Model comparison charts</span>
+              <div class="media-placeholder project-visual project-visual-metrics" aria-hidden="true">
+                <div class="metric-orbit">
+                  <strong>89.3%</strong>
+                  <span>Peak Accuracy</span>
+                </div>
+                <div class="metric-bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
               <p class="project-tag">Project</p>
               <h3>Comparative Analysis of NLP Models</h3>
@@ -136,6 +203,11 @@
                 <li>Role: Independent research project contributor</li>
                 <li>Tools: Python, Pandas, Gensim, visualization</li>
               </ul>
+              <div class="project-meta-row" aria-label="Project highlights">
+                <span>NLP</span>
+                <span>Python</span>
+                <span>Evaluation</span>
+              </div>
             </a>
           </div>
         </section>
@@ -152,6 +224,9 @@
                   class="media-image"
                   src="assets/images/interests/movie-recommendation/card.png"
                   alt="Movie recommendation project workflow"
+                  width="3420"
+                  height="1898"
+                  loading="lazy"
                 />
               </div>
               <div class="interest-card-copy">
@@ -169,6 +244,9 @@
                   class="media-image"
                   src="assets/images/interests/video-editing/card.png"
                   alt="DaVinci Resolve editing workflow"
+                  width="3420"
+                  height="2036"
+                  loading="lazy"
                 />
               </div>
               <div class="interest-card-copy">
@@ -186,6 +264,9 @@
                   class="media-image media-image-focus-top"
                   src="assets/images/interests/ai-short-film/card.jpg"
                   alt="Poster for A Dream of Confucius"
+                  width="990"
+                  height="1400"
+                  loading="lazy"
                 />
               </div>
               <div class="interest-card-copy">
@@ -257,18 +338,25 @@
     <script type="module">
       import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
 
-      // 1. Hero Load Animation
-      animate(".hero-photo", { opacity: [0, 1], scale: [0.95, 1] }, { duration: 1.2, ease: "easeOut" });
-      animate(
-        ".hero-text, .hero-panel", 
-        { opacity: [0, 1], y: [20, 0] }, 
-        { delay: stagger(0.15, { startDelay: 0.4 }), duration: 0.8, ease: "easeOut" }
-      );
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      // 2. Scroll Animation for Sections
-      inView(".section", ({ target }) => {
-        animate(target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, ease: "easeOut" });
-      }, { margin: "-100px" });
+      if (!reduceMotion) {
+        animate(".hero-photo", { opacity: [0, 1], scale: [0.96, 1] }, { duration: 1.1, ease: "easeOut" });
+        animate(
+          ".hero-kicker, .hero-name, .hero-text, .hero-tags, .hero-panel",
+          { opacity: [0, 1], y: [18, 0] },
+          { delay: stagger(0.11, { startDelay: 0.18 }), duration: 0.7, ease: "easeOut" }
+        );
+
+        inView(".section", ({ target }) => {
+          animate(target, { opacity: [0, 1], y: [32, 0] }, { duration: 0.62, ease: "easeOut" });
+          animate(
+            target.querySelectorAll(".section-heading, .about-grid, .focus-strip, .project-card, .interest-card, .section-split > div, .contact-card"),
+            { opacity: [0, 1], y: [18, 0] },
+            { delay: stagger(0.045, { startDelay: 0.08 }), duration: 0.5, ease: "easeOut" }
+          );
+        }, { margin: "-100px" });
+      }
     </script>
   </body>
 </html>
