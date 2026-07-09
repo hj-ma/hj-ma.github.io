@@ -17,7 +17,10 @@
   --shadow: 0 14px 34px rgba(22, 35, 31, 0.1);
   --shadow-strong: 0 24px 62px rgba(15, 33, 27, 0.18);
   --radius: 8px;
-  --hero-top-height: clamp(190px, 22vw, 248px);
+  --page-max: 1080px;
+  --content-max: 960px;
+  --content-inset: clamp(24px, 4vw, 64px);
+  --page-gutter: clamp(40px, 8vw, 128px);
 }
 
 * {
@@ -63,16 +66,23 @@ button:focus-visible {
 .page-shell {
   position: relative;
   z-index: 1;
-  width: min(1200px, calc(100% - 32px));
+  width: min(var(--page-max), calc(100% - var(--page-gutter)));
   margin: 0 auto;
   padding: 16px 0 64px;
 }
 
+#top {
+  width: min(var(--content-max), calc(100% - var(--content-inset)));
+  margin: 0 auto;
+}
+
 .page-frame {
   position: fixed;
-  inset: 0;
+  inset: 0 auto 0 50%;
   z-index: 0;
+  width: min(var(--page-max), calc(100% - var(--page-gutter)));
   pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .page-frame::before,
@@ -86,11 +96,11 @@ button:focus-visible {
 }
 
 .page-frame::before {
-  left: max(16px, calc((100vw - 1200px) / 2 - 28px));
+  left: 0;
 }
 
 .page-frame::after {
-  right: max(16px, calc((100vw - 1200px) / 2 - 28px));
+  right: 0;
 }
 
 .site-header {
@@ -111,14 +121,14 @@ button:focus-visible {
 
 .brand {
   font-family: "Archivo", sans-serif;
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0;
 }
 
 .site-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 4px;
   padding: 4px;
@@ -140,6 +150,8 @@ button:focus-visible {
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow-wrap: normal;
   transition: color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -155,6 +167,103 @@ button:focus-visible {
   background: linear-gradient(135deg, rgba(34, 192, 139, 0.22), rgba(214, 151, 40, 0.12)), var(--surface);
   color: var(--accent-dark);
   box-shadow: 0 0 0 1px rgba(18, 140, 112, 0.26), 0 10px 24px rgba(18, 140, 112, 0.16);
+}
+
+.site-menu {
+  position: relative;
+  display: none;
+  justify-self: end;
+}
+
+.site-menu summary {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(15, 76, 62, 0.18);
+  border-radius: 999px;
+  background: rgba(16, 27, 24, 0.06);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.site-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-menu summary::marker {
+  content: "";
+}
+
+.site-menu summary span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  margin: 2px 0;
+  border-radius: 999px;
+  background: var(--accent-dark);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.site-menu[open] summary,
+.site-menu summary:hover,
+.site-menu summary:focus-visible {
+  border-color: rgba(18, 140, 112, 0.58);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px rgba(18, 140, 112, 0.18), 0 10px 24px rgba(18, 140, 112, 0.14);
+}
+
+.site-menu[open] summary span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.site-menu[open] summary span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-menu[open] summary span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  min-width: 220px;
+  padding: 8px;
+  border: 1px solid rgba(143, 179, 142, 0.74);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 245, 0.96);
+  box-shadow: var(--shadow-strong);
+  backdrop-filter: blur(16px);
+}
+
+.mobile-menu-panel a {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: calc(var(--radius) - 2px);
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.mobile-menu-panel a:hover,
+.mobile-menu-panel a:focus-visible,
+.mobile-menu-panel a.is-active {
+  background: linear-gradient(135deg, rgba(34, 192, 139, 0.2), rgba(214, 151, 40, 0.11)), var(--surface);
+  color: var(--accent-dark);
 }
 
 .site-status {
@@ -234,7 +343,7 @@ button:focus-visible {
   grid-column: 2;
   grid-row: 1 / span 2;
   overflow: hidden;
-  height: var(--hero-top-height);
+  aspect-ratio: 1392 / 1778;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: var(--surface-soft);
@@ -246,6 +355,7 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 0%;
 }
 
 .hero-panel {
@@ -284,7 +394,7 @@ h3 {
 
 h1 {
   max-width: 14ch;
-  font-size: clamp(3rem, 7vw, 5.6rem);
+  font-size: clamp(2.45rem, 5.8vw, 4.8rem);
 }
 
 .hero-kicker {
@@ -299,16 +409,16 @@ h1 {
 
 .hero-name {
   max-width: none;
-  font-size: clamp(3rem, 7.8vw, 6rem);
+  font-size: clamp(2.65rem, 6.4vw, 5rem);
   letter-spacing: 0;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.55rem);
 }
 
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
 }
 
 p,
@@ -333,7 +443,7 @@ strong {
 .hero-text {
   max-width: 64ch;
   margin: 0;
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 .hero-text-wide {
@@ -514,7 +624,7 @@ strong {
 .project-grid,
 .resource-index {
   display: grid;
-  gap: 20px;
+  gap: 24px;
 }
 
 .about-grid,
@@ -577,7 +687,7 @@ strong {
   max-width: 860px;
   margin: 0 auto;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
   line-height: 1.75;
   text-align: center;
 }
@@ -643,14 +753,14 @@ strong {
   margin-bottom: 10px;
   color: var(--surface);
   font-family: "Archivo", sans-serif;
-  font-size: clamp(1.05rem, 1.8vw, 1.36rem);
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
   line-height: 1.16;
 }
 
 .film-frame p {
   margin: 0;
   color: rgba(255, 253, 245, 0.72);
-  font-size: 0.96rem;
+  font-size: 0.9rem;
 }
 
 .interest-card,
@@ -1038,7 +1148,7 @@ strong {
 }
 
 .contact-card a {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
 }
 
@@ -1130,7 +1240,7 @@ strong {
 .detail-main .hero-title {
   max-width: none;
   height: auto;
-  font-size: clamp(2.15rem, 5vw, 4.4rem);
+  font-size: clamp(1.9rem, 4.2vw, 3.5rem);
 }
 
 .detail-list {
@@ -1259,7 +1369,6 @@ strong {
 @media (max-width: 560px) {
   .hero-copy-layout {
     grid-template-columns: 1fr;
-    --hero-top-height: clamp(220px, 72vw, 320px);
   }
 
   .hero-intro,
@@ -1287,45 +1396,48 @@ strong {
   }
 
   .hero-name {
-    font-size: clamp(2.55rem, 15vw, 4.4rem);
+    font-size: clamp(2.3rem, 12vw, 3.65rem);
   }
 
   .hero-text {
-    font-size: clamp(0.96rem, 4.1vw, 1.04rem);
+    font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    position: sticky;
+    top: 8px;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 10px;
+    padding: 8px 10px;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .site-menu {
+    display: block;
+  }
+
+  .site-status {
+    justify-self: end;
   }
 }
 
 @media (max-width: 640px) {
   .page-shell {
-    width: min(100% - 20px, 1180px);
+    width: calc(100% - 28px);
     padding-top: 14px;
   }
 
-  .site-header {
-    position: static;
-    grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 12px;
-  }
-
-  .site-nav {
+  #top {
     width: 100%;
-    justify-content: flex-start;
-    gap: 4px;
-    overflow-x: auto;
-    scrollbar-width: none;
   }
 
-  .site-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .site-nav a {
-    min-width: 72px;
-  }
-
-  .site-status {
-    justify-self: start;
+  .page-frame {
+    width: calc(100% - 28px);
   }
 
   h1 {

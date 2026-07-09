@@ -8,13 +8,14 @@
       name="description"
       content="Portfolio for Haojun Ma, a software engineering student focused on HCI, machine learning, systems, and research-driven product prototypes."
     />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260709-research-width" />
+    <link rel="stylesheet" href="style.css?v=20260709-photo-grid" />
   </head>
   <body>
     <div class="page-frame" aria-hidden="true"></div>
@@ -27,6 +28,19 @@
           <a href="#interests">Interests</a>
           <a href="#contact">Contact</a>
         </nav>
+        <details class="site-menu">
+          <summary aria-label="Open section menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <nav class="mobile-menu-panel" aria-label="Section menu">
+            <a href="#about">About</a>
+            <a href="#projects">Research</a>
+            <a href="#interests">Interests</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </details>
         <div class="site-status" aria-label="Portfolio status">
           <span>OPEN</span>
           <i aria-hidden="true"></i>
@@ -357,12 +371,13 @@
         }, { margin: "-100px" });
       }
 
-      const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
-      const sectionMap = new Map(
+      const navLinks = Array.from(document.querySelectorAll(".site-nav a, .mobile-menu-panel a"));
+      const mobileMenu = document.querySelector(".site-menu");
+      const navHrefs = [...new Set(
         navLinks
-          .map((link) => [link.getAttribute("href"), link])
-          .filter(([href]) => href && href.startsWith("#"))
-      );
+          .map((link) => link.getAttribute("href"))
+          .filter((href) => href && href.startsWith("#"))
+      )];
 
       const setActiveNav = (id) => {
         navLinks.forEach((link) => {
@@ -376,7 +391,7 @@
         });
       };
 
-      const navSections = Array.from(sectionMap.keys())
+      const navSections = navHrefs
         .map((href) => document.querySelector(href))
         .filter(Boolean);
 
@@ -417,6 +432,9 @@
           const id = link.getAttribute("href")?.slice(1);
           if (id) {
             setActiveNav(id);
+          }
+          if (mobileMenu) {
+            mobileMenu.removeAttribute("open");
           }
         });
       });
