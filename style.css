@@ -321,6 +321,7 @@ button:focus-visible {
 }
 
 .hero {
+  position: relative;
   display: block;
   padding: 48px 0 16px;
 }
@@ -338,6 +339,8 @@ button:focus-visible {
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 1;
   padding: clamp(30px, 4vw, 48px);
   background:
     linear-gradient(135deg, rgba(255, 253, 245, 0.96), rgba(247, 245, 233, 0.88)),
