@@ -4,67 +4,145 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHI Social Media Research Dashboard | Haojun Ma</title>
+    <meta
+      name="description"
+      content="A frontend and data-visualization case study for a linked-view dashboard covering 197 tagged CHI social-media papers."
+    />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260710-no-projector" />
+    <link rel="stylesheet" href="style.css?v=20260721-outreach-release" />
   </head>
-  <body>
-    <div class="detail-shell">
+  <body class="case-study-page">
+    <div class="detail-shell case-study-shell">
       <div class="detail-header">
-        <a class="text-link" href="index.html#projects">Back to Projects</a>
+        <a class="text-link" href="index.html#projects">Back to Selected Work</a>
       </div>
-      <div class="detail-media">Place dashboard screenshots, a screen recording, or visualization snapshots here.</div>
-      <div class="detail-grid">
-        <section class="detail-main detail-stack">
-          <div>
-            <p class="eyebrow">Project</p>
-            <h1 class="hero-title">CHI Social Media Research Dashboard</h1>
-          </div>
-          <p>
-            This project builds an interactive research dashboard for exploring ACM CHI papers related to social media. It was designed to make a large body of academic material more explorable through connected views and lightweight interaction.
+
+      <main>
+        <header class="case-study-hero">
+          <p class="eyebrow">Course–Lab Collaboration · May–Jun 2025</p>
+          <h1>CHI Social Media Research Dashboard</h1>
+          <p class="case-study-lede">
+            A selective course–lab collaboration that turned 197 tagged CHI social-media papers into a linked-view dashboard for moving between distributions, relationships, and individual records.
           </p>
-          <div>
-            <h3>Key contributions</h3>
-            <ul class="detail-list">
-              <li>Built the overview panel that summarizes the dataset through stacked bar charts and pie charts.</li>
-              <li>Implemented cross-view filtering so chart interactions update the Sankey relationship diagram.</li>
-              <li>Worked within a 3-person team using a Git feature-branch workflow.</li>
-              <li>Contributed reusable frontend structure using Vue 3, TypeScript, and Vite.</li>
-            </ul>
+          <div class="case-study-actions" aria-label="Project artifacts">
+            <a class="button-link button-link-primary" href="https://kkzyu.github.io/CHI/#/">Open live demo</a>
+            <a class="button-link" href="https://github.com/kkzyu/CHI">View source</a>
           </div>
-          <div>
-            <h3>What to add later</h3>
-            <ul class="detail-list">
-              <li>A short walkthrough video showing interactions between overview charts and the Sankey diagram.</li>
-              <li>Static screenshots of each dashboard state.</li>
-              <li>Explanation of the data model and interaction design choices.</li>
-            </ul>
-          </div>
-        </section>
-        <aside class="detail-side detail-meta">
-          <div>
-            <strong>Role</strong>
-            <span>Frontend and visualization developer</span>
-          </div>
-          <div>
-            <strong>Tools</strong>
-            <span>Vue 3, TypeScript, Vite, data visualization</span>
-          </div>
-          <div>
-            <strong>Focus</strong>
-            <span>HCI, information visualization, research tooling</span>
-          </div>
-          <div>
-            <strong>Repository</strong>
-            <span><a href="https://github.com/kkzyu/CHI">github.com/kkzyu/CHI</a></span>
-          </div>
-        </aside>
-      </div>
+          <dl class="case-study-facts">
+            <div><dt>My role</dt><dd>Overview Panel and cross-view filtering</dd></div>
+            <div><dt>Team</dt><dd>Three frontend contributors</dd></div>
+            <div><dt>Stack</dt><dd>Vue 3 · TypeScript · Vite</dd></div>
+            <div><dt>Status</dt><dd>Deployed · Archived</dd></div>
+          </dl>
+        </header>
+
+        <figure class="case-study-figure case-study-figure-hero">
+          <img
+            src="assets/images/projects/chi-dashboard/card.png"
+            alt="Dashboard with overview charts, a central Sankey diagram, and a paper details panel"
+            width="1922"
+            height="1084"
+          />
+          <figcaption>
+            The deployed interface combines an Overview Panel, a Sankey relationship view, and paper details in one desktop workspace.
+          </figcaption>
+        </figure>
+
+        <div class="case-study-layout">
+          <article class="case-study-content">
+            <section class="case-study-section" aria-labelledby="context-title">
+              <p class="case-study-index">01 · Context</p>
+              <h2 id="context-title">Making a small research corpus easier to traverse</h2>
+              <p>
+                The project organized 197 CHI papers about social media with tags for research content, methods, and platform categories. A single chart could summarize the corpus, but it could not show how those categories related or which papers produced a pattern.
+              </p>
+              <p>
+                Offered through a course in collaboration with a laboratory, the project selected participants through an online interview. The three-person implementation team built one desktop dashboard with coordinated overview, Sankey, and details regions. The collaboration context is important, but the public claim remains an implementation contribution—not a user study or a new HCI research finding.
+              </p>
+            </section>
+
+            <section class="case-study-section" aria-labelledby="contribution-title">
+              <p class="case-study-index">02 · Contribution</p>
+              <h2 id="contribution-title">Overview charts and the handoff into relational exploration</h2>
+              <p>
+                I owned the Overview Panel, including stacked bar charts and pie charts that summarize time, award status, and tag distributions. I also implemented the filtering handoff from those charts to the Sankey view.
+              </p>
+              <ul class="case-study-list">
+                <li>Built the Overview Panel as my assigned module in a three-person frontend team.</li>
+                <li>Added selection states so a chart interaction could become a filter rather than an isolated highlight.</li>
+                <li>Connected overview selections to the Sankey view while collaborating across separate feature branches.</li>
+              </ul>
+            </section>
+
+            <section class="case-study-section" aria-labelledby="flow-title">
+              <p class="case-study-index">03 · Interaction flow</p>
+              <h2 id="flow-title">From a distribution to the relationships behind it</h2>
+              <p>
+                The key interaction decision was to use overview charts as entry points into the central relationship view. This keeps the overview useful for exploration rather than leaving it as a static summary.
+              </p>
+              <ol class="interaction-flow" aria-label="Overview to Sankey interaction flow">
+                <li><span>1</span><div><strong>Select</strong><p>Choose a year, award state, or category in an overview chart.</p></div></li>
+                <li><span>2</span><div><strong>Translate</strong><p>Represent that chart selection as filter criteria shared with the Sankey module.</p></div></li>
+                <li><span>3</span><div><strong>Update</strong><p>Recompute the visible nodes and link weights for the filtered paper subset.</p></div></li>
+              </ol>
+              <aside class="case-study-note">
+                <strong>Trade-off</strong>
+                <p>The interaction depends on a shared filtering contract between separately owned views. It improved cross-view continuity, but increased coordination and coupling between frontend modules.</p>
+              </aside>
+            </section>
+
+            <section class="case-study-section" aria-labelledby="outcome-title">
+              <p class="case-study-index">04 · Outcome &amp; limits</p>
+              <h2 id="outcome-title">A complete public artifact, with a deliberately limited claim</h2>
+              <p>
+                The team delivered a deployed dashboard and public source repository. For my portfolio, the project demonstrates frontend collaboration, data visualization, and linked-view state handling.
+              </p>
+              <ul class="case-study-list">
+                <li>The corpus contains 197 records and should not be described as a comprehensive CHI literature database.</li>
+                <li>Tagging was substantially manual, so the interface inherits the dataset’s coverage and consistency limits.</li>
+                <li>No formal usability study was conducted; the project does not establish that the dashboard improves research performance.</li>
+                <li>The interface was designed primarily as a desktop research workspace and is now archived.</li>
+              </ul>
+            </section>
+
+            <section class="case-study-section" aria-labelledby="artifacts-title">
+              <p class="case-study-index">05 · Artifacts</p>
+              <h2 id="artifacts-title">Inspect the working result</h2>
+              <div class="artifact-list">
+                <a href="https://kkzyu.github.io/CHI/#/"><span>Live dashboard</span><strong>Open deployed interface ↗</strong></a>
+                <a href="https://github.com/kkzyu/CHI"><span>Source repository</span><strong>Review code and team structure ↗</strong></a>
+              </div>
+            </section>
+          </article>
+
+          <aside class="case-study-aside" aria-label="Case study summary">
+            <div>
+              <p class="eyebrow">Project boundary</p>
+              <p>Frontend and visualization implementation in a course–lab collaboration entered through an online interview.</p>
+            </div>
+            <div>
+              <p class="eyebrow">Personal ownership</p>
+              <p>Overview Panel, chart interactions, and chart-to-Sankey filtering.</p>
+            </div>
+            <div>
+              <p class="eyebrow">Inspectable proof</p>
+              <p>Deployed demo, public source, team assignments, and commit history.</p>
+            </div>
+          </aside>
+        </div>
+
+        <nav class="case-study-pagination" aria-label="Project navigation">
+          <a href="project-scenezero.html"><span>Previous project</span><strong>SceneZero</strong></a>
+          <a href="index.html#projects"><span>Project index</span><strong>All selected work</strong></a>
+          <a href="project-nlp-models.html"><span>Next project</span><strong>NLP Model Comparison</strong></a>
+        </nav>
+      </main>
     </div>
   </body>
 </html>

@@ -42,3 +42,18 @@ Project User Programs Report (Copy).pdf
 SceneZero产品定位.md
 srtp结项答辩.pptx
 项目展示.pptx
+
+# Internal portfolio planning and evidence files
+P0_*.md
+P2_*.md
+P6_*.md
+PORTFOLIO_REVISION_CHECKLIST.md
+plan_logs/
+dev_logs/
+补充信息/
+
+# Local document sources and build artifacts
+output/
+tmp/
+*.aux
+*.out
