@@ -28,29 +28,9 @@ build/
 # Keep optimized web assets, but avoid committing raw/original exports.
 assets/images/**/raw/
 assets/images/**/originals/
-assets/images/interests/ai-short-film/card.png
-
-
-# 补充信息文件
-3230103576_马好君_minisql个人报告.pdf
-项目成果.docx
-浙江大学大学生创新创业训练计划项目结题报告.docx
-Project File System Design .pdf
-Project Threads Design.pdf
-Project User Programs Design (Copy).pdf
-Project User Programs Report (Copy).pdf
-SceneZero产品定位.md
-srtp结项答辩.pptx
-项目展示.pptx
 
 # Internal portfolio planning and evidence files
-P0_*.md
-P2_*.md
-P6_*.md
-PORTFOLIO_REVISION_CHECKLIST.md
-plan_logs/
-dev_logs/
-补充信息/
+internal/
 
 # Local document sources and build artifacts
 output/
